@@ -6,14 +6,13 @@ The data used for examples are based on the four-decade time series of estuarine
 
 "MEE_iNEXT-3D" includes the following files:
 
-(1) Abundance/incidence data files for TD: "Fish abundance data.csv" (for Figures 1, 2), "Fish incidence data.csv" and "Fish incidence raw data.csv"(for Figures 2, 4).
+(1) Data Files
+(1a) Abundance/incidence data for TD: "Fish abundance data.csv" (for Figures 1, 2), "Fish incidence data.csv" and "Fish incidence raw data.csv"(for Figures 2, 4). 
+(1b) Phylogenetic tree for PD: "Fish phyloTree.txt" (for all figures).
+(1c) Traits for FD: "Fish traits" (for all figures).
 
-(2) Phylogenetic tree for PD: "Fish phyloTree.txt" (for all figures).
+(2) Fish code.R: Main code for plotting all figures (Figures 1 to 4 in the MEE paper).
 
-(3) Traits for FD: "Fish traits" (for all figures).
+(3) Source R code: "Source R code.txt"
 
-(4) Fish code.r: Main code for plotting all figures (Figures 1 to 4 in the MEE paper).
-
-(5) Source R code: "Source R code.txt"
-
-(6) Guide for R code: "Guide.docx"
+(4) Guide for R code: "Brief Guide.docx" (details about some functions in iNEXT-3D)
