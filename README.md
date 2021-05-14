@@ -1,4 +1,4 @@
-MEE_iNEXT-3D (R code for graphics in MEE paper by Chao et al.)
+MEE_iNEXT-3D (R code for graphics in MEE 2021 paper by Chao et al.)
 
 R code along with data is provided for plotting all figures in the paper "Measuring temporal change in alpha diversity: a framework integrating taxonomic, phylogenetic and functional diversity and the iNEXT-3D standardization", Methods in Ecology and Evolution. Before using the R code, you must download the package "iNEXT-3D" from Anne Chao's Github. 
 
@@ -14,6 +14,6 @@ The data used for examples are based on the four-decade time series of estuarine
 
 (4) Fish code.r: Main code for plotting all figures (Figures 1 to 4 in the MEE paper).
 
-(5) Figure-making R code.R: R code for computing and plotting the Lorenz curves of assemblages; see Appendix S4 for examples.
+(5) Source R code: "Source R code.txt"
 
-(6) Figure-making.txt
+(6) Guide for R code: "Guide.docx"
