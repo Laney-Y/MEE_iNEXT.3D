@@ -1,5 +1,5 @@
-#' @param fig_1_or_3 is used to plot figure 1, figure 3 in the paper
-#' @param output is the result come from iNEXT3D.
+#' @param fig_1_or_3 is used to plot figure 1 and figure 3 in the paper
+#' @param output is the result from iNEXT3D.
 #' @param y_label is the diversity type.
 #' 
 fig_1_or_3 <- function(output, y_label) {
