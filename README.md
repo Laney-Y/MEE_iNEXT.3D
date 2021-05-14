@@ -6,12 +6,12 @@ The data used for examples are based on the four-decade time series of estuarine
 
 "MEE_iNEXT-3D" includes the following files:
 
-(1) Data for TD files: Alpine_relative_abundance_data: the relative abundances of the 45 Alpine species for three successional stages; see Figure 1.
+(1) Abundance/incidence data files for TD: "Fish abundance data.csv" (for Figures 1, 2), "Fish incidence data.csv" and "Fish incidence raw data.csv"(for Figures 2, 4).
 
-(2) phylo_tree for PD: the phylogenetic tree of the 45 Alpine species; see Figure 1. This tree was taken from Ricotta et al. (2015, Appendix A).
+(2) Phylogenetic tree for PD: "Fish phyloTree.txt" (for all figures).
 
-(3) traits for FD 
+(3) Traits for FD" "Fish traits" (for all figures).
 
-(4) ????.R: Main code for plotting all figures (Figures 1 to 4 in the MEE paper).
+(4) Fish code.r: Main code for plotting all figures (Figures 1 to 4 in the MEE paper).
 
 (5) Lorenz.R: R code for computing and plotting the Lorenz curves of assemblages; see Appendix S4 for examples.
