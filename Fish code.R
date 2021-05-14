@@ -14,17 +14,17 @@ library(gg.gap)
 # ========================================================================================================== #
 
 library(devtools)
-install_github("AnneChao/iNEXT3D")  # Press 'Enter' to skip update selections
+install_github("AnneChao/iNEXT3D")  # Press 'Enter' to skip number selection
 library(iNEXT3D)
 
-source("figure-making.txt")
+source("Source R code.txt")
 
 # ========================================================================================================== #
-# Part 1 : Yearly abundance-data analysis for Figures 1, 2.
+# Part 1 : Abundance-based yearly analysis for Figure 1, 2.
 
-Abun <- read.csv("Fish Abundance data.csv", row.names = 1, header= TRUE)
-tree <- read.tree("Fish PhyTree.txt")
-traits <- read.csv("Fish Traits.csv", row.names = 1, header= TRUE)
+Abun <- read.csv("Fish abundance data.csv", row.names = 1, header= TRUE)
+tree <- read.tree("Fish phyloTree.txt")
+traits <- read.csv("Fish traits.csv", row.names = 1, header= TRUE)
 
 
 Cmax <- apply(Abun, 2, function(x) iNEXT3D:::Chat.Ind(x, 2*sum(x))) %>% min %>% round(., 4)
@@ -93,13 +93,13 @@ fig_2_or_4(TD.output = out_TD, PD.output = out_PD, FD.output = out_FD, q = 2)
 
 
 # ========================================================================================================== #
-# Part 2 : Three years incidence-based-data analysis for Figures 3, 4.
+# Part 2 : Incidence-based three years analysis for Figure 3, 4.
 
-Inci_freq <- read.csv("Fish Incidence frequency data.csv", row.names = 1, header= TRUE)
-Inci_raw <- read.csv("Fish Incidence raw data.csv", row.names = 1, header= TRUE)
+Inci_freq <- read.csv("Fish incidence frequency data.csv", row.names = 1, header= TRUE)
+Inci_raw <- read.csv("Fish incidence raw data.csv", row.names = 1, header= TRUE)
 nT <- as.matrix(Inci_freq)[1,]
-tree <- read.tree("Fish PhyTree.txt")
-traits <- read.csv("Fish Traits.csv", row.names = 1, header= TRUE)
+tree <- read.tree("Fish phyloTree.txt")
+traits <- read.csv("Fish traits.csv", row.names = 1, header= TRUE)
 
 
 Cmax <- apply(Inci_freq, 2, function(x) iNEXT3D:::Chat.Sam(x, 2*x[1])) %>% min %>% round(., 4)
