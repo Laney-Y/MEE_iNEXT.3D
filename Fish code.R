@@ -14,13 +14,13 @@ library(gg.gap)
 # ========================================================================================================== #
 
 library(devtools)
-install_github("AnneChao/iNEXT3D")  # Press 'Enter' to skip number selection
+install_github("AnneChao/iNEXT3D")  # Press 'Enter' to skip update selections
 library(iNEXT3D)
 
 source("figure-making.txt")
 
 # ========================================================================================================== #
-# Part 1 : Abundance-based yearly analysis for Figure 1, 2.
+# Part 1 : Yearly abundance-data analysis for Figures 1, 2.
 
 Abun <- read.csv("Fish Abundance data.csv", row.names = 1, header= TRUE)
 tree <- read.tree("Fish PhyTree.txt")
@@ -93,7 +93,7 @@ fig_2_or_4(TD.output = out_TD, PD.output = out_PD, FD.output = out_FD, q = 2)
 
 
 # ========================================================================================================== #
-# Part 2 : Incidence-based three years analysis for Figure 3, 4.
+# Part 2 : Three years incidence-based-data analysis for Figures 3, 4.
 
 Inci_freq <- read.csv("Fish Incidence frequency data.csv", row.names = 1, header= TRUE)
 Inci_raw <- read.csv("Fish Incidence raw data.csv", row.names = 1, header= TRUE)
