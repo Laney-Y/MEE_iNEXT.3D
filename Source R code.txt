@@ -1,6 +1,6 @@
-#' @param fig_1_or_3 is used to plot figure 1 and figure 3 in the paper
-#' @param output is the result from iNEXT3D.
-#' @param y_label is the diversity type.
+#' @Function fig_1_or_3 is used to plot figure 1 and figure 3 in the MEE paper
+#' @param output is from iNEXT.3D.
+#' @param y_label is diversity type.
 #' 
 fig_1_or_3 <- function(output, y_label) {
   goalSC = unique(output$goalSC)[1:2] %>% as.numeric
@@ -98,11 +98,11 @@ fig_1_or_3 <- function(output, y_label) {
   ans
 }
 
-#' @param fig_2_or_4 is used to plot figure 2, figure 3 in the paper
-#' @param TD.output output from taxonomic class.
-#' @param PD.output output from phylogenetic class.
-#' @param FD.output output from functional class.
-#' @param q is the specified order q.
+#' @Function fig_2_or_4 is used to plot figure 2 and figure 4 in the MEE paper
+#' @param TD.output is for taxonomic diversity.
+#' @param PD.output is for phylogenetic diversity.
+#' @param FD.output is for functional diversity.
+#' @param q is specified diversity order.
 #' 
 fig_2_or_4 <- function(TD.output, PD.output, FD.output, q) {
   do.ANOVA <- function(output) {
