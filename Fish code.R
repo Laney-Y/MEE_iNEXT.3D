@@ -14,13 +14,13 @@ library(gg.gap)
 # ========================================================================================================== #
 
 library(devtools)
-install_github("AnneChao/iNEXT.3D")  # Press 'Enter' to skip number selection
+install_github("AnneChao/iNEXT.3D")  # Press 'Enter' to skip update selection
 library(iNEXT.3D)
 
 source("Source R code.txt")
 
 # ========================================================================================================== #
-# Part 1 : Abundance-based yearly analysis for Figure 1, 2.
+# Part 1 : Yearly abundance data analysis for Figures 1 and 2.
 
 Abun <- read.csv("Fish abundance data.csv", row.names = 1, header= TRUE)
 tree <- read.tree("Fish phyloTree.txt")
@@ -32,7 +32,7 @@ Cmin <- apply(Abun, 2, function(x) iNEXT.3D:::Chat.Ind(x, sum(x))) %>% min %>% r
 
 
 # ========================================================================================================== #
-# Figure 1 - Taxonomic diversity
+# Figure 1 - Taxonomic diversity part
 
 TD_est <- estimate3D(data = Abun, diversity = 'TD', q = c(0, 1, 2), datatype = 'abundance', base = 'coverage', level = c(Cmin, Cmax), nboot = 0)
 TD_obs <- Obs3D(data = Abun, diversity = 'TD', q = c(0, 1, 2), datatype = 'abundance', nboot = 0)
@@ -46,7 +46,7 @@ fig_1_or_3(out_TD, y_label = 'Taxonomic diversity')
 
 
 # ========================================================================================================== #
-# Figure 1 - Phylogenetic diversity
+# Figure 1 - Phylogenetic diversity part
 
 PD_est <- estimate3D(data = Abun, diversity = 'PD', tree = tree, datatype = 'abundance', PDtype = 'meanPD', 
                      q = c(0, 1, 2), level = c(Cmin, Cmax), nboot = 0, reftime = 1)
@@ -63,7 +63,7 @@ fig_1_or_3(out_PD, y_label = 'Phylogenetic diversity')
 
 
 # ========================================================================================================== #
-# Figure 1 - Functional diversity
+# Figure 1 - Functional diversity part
 
 for (i in 1:ncol(traits)) {
   if (class(traits[,i]) == "character") traits[,i] <- factor(traits[,i], levels = unique(traits[,i]))
@@ -83,7 +83,7 @@ fig_1_or_3(out_FD, y_label = 'Functional diversity')
 
 
 # ========================================================================================================== #
-# Figure 2
+# Figure 2: Yearly abundance data with TD, Pd and FD being lotted in the same figure
 
 fig_2_or_4(TD.output = out_TD, PD.output = out_PD, FD.output = out_FD, q = 0)
 
@@ -93,7 +93,7 @@ fig_2_or_4(TD.output = out_TD, PD.output = out_PD, FD.output = out_FD, q = 2)
 
 
 # ========================================================================================================== #
-# Part 2 : Incidence-based three years analysis for Figure 3, 4.
+# Part 2 : Three-year incidence data analysis for Figures 3 and 4.
 
 Inci_freq <- read.csv("Fish incidence frequency data.csv", row.names = 1, header= TRUE)
 Inci_raw <- read.csv("Fish incidence raw data.csv", row.names = 1, header= TRUE)
@@ -107,7 +107,7 @@ Cmin <- apply(Inci_freq, 2, function(x) iNEXT.3D:::Chat.Sam(x, x[1])) %>% min %>
 
 
 # ========================================================================================================== #
-# Figure 3 - Taxonomic diversity
+# Figure 3 - Taxonomic diversity part
 
 TD_est <- estimate3D(data = Inci_freq, diversity = 'TD', q = c(0, 1, 2), datatype = 'incidence_freq', base = 'coverage', 
                      level = c(Cmin, Cmax), nboot = 0)
@@ -122,7 +122,7 @@ fig_1_or_3(out_TD, y_label = 'Taxonomic diversity')
 
 
 # ========================================================================================================== #
-# Figure 3 - Phylogenetic diversity
+# Figure 3 - Phylogenetic diversity part
 
 PD_est <- estimate3D(data = Inci_raw, diversity = 'PD', tree = tree, datatype = 'incidence_raw', PDtype = 'meanPD', nT = nT,
                      q = c(0, 1, 2), level = c(Cmin, Cmax), nboot = 0, reftime = 1)
@@ -139,7 +139,7 @@ fig_1_or_3(out_PD, y_label = 'Phylogenetic diversity')
 
 
 # ========================================================================================================== #
-# Figure 3 - Functional diversity
+# Figure 3 - Functional diversity part
 
 for (i in 1:ncol(traits)) {
   if (class(traits[,i]) == "character") traits[, i] <- factor(traits[,i], levels = unique(traits[, i]))
@@ -161,7 +161,7 @@ fig_1_or_3(out_FD, y_label = 'Functional diversity')
 
 
 # ========================================================================================================== #
-# Figure 4
+# Figure 4 - Three-year incidence data with TD, Pd and FD being lotted in the same figure
 
 fig_2_or_4(TD.output = out_TD, PD.output = out_PD, FD.output = out_FD, q = 0)
 
