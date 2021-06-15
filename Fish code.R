@@ -17,7 +17,7 @@ library(iNEXT.3D)
 source("Source R code.txt")
 
 # ========================================================================================================== #
-# Part 1 : Abundance-based yearly analysis for Figure 1, 2.
+# Part 1 : Abundance-based yearly data analysis (plotting Figure 1 and 2 in the MEE paper).
 
 Abun <- read.csv("Fish abundance data.csv", row.names = 1, header= TRUE)
 tree <- read.tree("Fish phyloTree.txt")
@@ -92,7 +92,7 @@ fig_2_or_4(TD.output = out_TD, PD.output = out_PD, FD.output = out_FD, q = 2)
 
 
 # ========================================================================================================== #
-# Part 2 : Incidence-based three years analysis for Figure 3, 4.
+# Part 2 : Three-year incidence data analysis for Figures 3 and 4.
 
 Inci_raw <- read.csv("Fish incidence raw data.csv", row.names = 1, header= TRUE)
 nT <- read.csv('nT for incidence data.csv', row.names = 1)
