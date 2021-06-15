@@ -18,6 +18,7 @@ source("Source R code.txt")
 
 # ========================================================================================================== #
 # Part 1 : Abundance-based yearly data analysis (plotting Figure 1 and 2 in the MEE paper).
+# See "Brief guide" for details. 
 
 Abun <- read.csv("Fish abundance data.csv", row.names = 1, header= TRUE)
 tree <- read.tree("Fish phyloTree.txt")
