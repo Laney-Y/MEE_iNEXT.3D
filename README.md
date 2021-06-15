@@ -13,6 +13,6 @@ The data used for examples are based on the four-decade time series of estuarine
 
 (2) Fish code.R: Main code for plotting all figures (Figures 1 to 4 in the MEE paper).
 
-(3) Source R code: "Source R code.txt"
+(3) Source R code: "Source R code.txt".
 
-(4) Guide for R code: "Brief guide.docx" (introduction to iNEXT.3D and a brief guide to R code for making graphics in Chao et al. 2021 paper )
+(4) Guide for R code: "Brief guide.docx" (introduction to iNEXT.3D and a brief guide to R code for making graphics in Chao et al. 2021 paper ).
